@@ -1,0 +1,43 @@
+books = [int(n) for n in input("Input a list of numbers").split()]
+
+def pairs(books):
+    if len(books) == 2:
+        print(books[0] + books[1])
+    else:
+        mid = len(books) // 2 
+        first_half = books[:mid]
+        second_half = books[mid:]
+        
+        pairs(first_half)
+        pairs(second_half)
+pairs(books)
+
+
+flowers = [int(n) for n in input("How many blossoms are on each tree?").split()]
+def orchard(flowers):
+    if len(flowers) == 1:
+        print(flowers[0] * 3)
+    else:
+        mid = len(flowers) // 2
+        first_half = flowers[:mid]
+        second_half = flowers[mid:]
+
+        orchard(first_half)
+        orchard(second_half)
+orchard(flowers)
+
+def factorial(num):
+    if (num == 1 or num == 0):
+        return 1
+    else:
+        return (num * factorial(num - 1))
+num = int(input())
+print(factorial(num))
+
+
+def add_list(my_list):
+    if len(my_list) == 1:
+        return my_list[0]
+    else:
+        return my_list[0] + add_list(my_list[1:])
+print(add_list(list_of_nums))
