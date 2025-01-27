@@ -1,3 +1,4 @@
+                Recursion vc Iteration
 books = [int(n) for n in input("Input a list of numbers").split()]
 
 def pairs(books):
@@ -41,3 +42,64 @@ def add_list(my_list):
     else:
         return my_list[0] + add_list(my_list[1:])
 print(add_list(list_of_nums))
+
+
+final = []
+def Fibonacci(num):
+    if num <= 1:
+        return num
+    else:
+        return(Fibonacci(num-1) + Fibonacci(num-2))
+length = int(input("Enter numbers"))
+
+for i in range(length):
+    final.append(Fibonacci(i))
+print(final)
+
+
+                  Bubble sort
+
+
+
+answer = int(input("Enter a number 0 - 100"))
+
+arr = [10, 32, 4, 90, 15, 20, 89, 1, 3, 45, 42, 87, 91, 18, 25, 76, 38, 12]
+
+arr.append(answer)
+
+def bubbleSort(sort_list):
+    n = len(sort_list)
+    for i in range(n-1):
+        for j in range(0, n-i-1):
+            if sort_list[j] > sort_list[j+1]:
+                sort_list[j], sort_list[j+1] = sort_list[j+1], sort_list[j]
+    return sort_list
+
+bubbleSort(arr)
+
+print(arr)
+
+
+                                   Selection Sort
+
+
+
+answer = int(input("Enter a number 0 - 100"))
+
+arr = [10, 32, 4, 90, 15, 20, 89, 1, 3, 45, 42, 87, 91, 18, 25, 76, 38, 12]
+
+arr.append(answer)
+
+def selectionSort(sort_list):
+    for i in range(len(sort_list)):
+        smaller_index = i
+        for j in range(i+1, len(sort_list)):
+            if sort_list[smaller_index] > sort_list[j]:
+                smaller_index = j
+        sort_list[i], sort_list[smaller_index] = sort_list[smaller_index], sort_list[i]
+
+selectionSort(arr)
+print(arr)
+
+
+                                      Insertion Sort
